@@ -15,4 +15,9 @@
             <file>tests/EloquentTest.php</file>
         </testsuite>
     </testsuites>
+    <filter>
+      <whitelist processUncoveredFilesFromWhitelist="true">
+        <file>/tests/EloquentTest.php</file>
+      </whitelist>
+    </filter>
 </phpunit>

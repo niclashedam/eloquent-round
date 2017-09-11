@@ -3,11 +3,9 @@ namespace NiclasHedam\EloquentRound;
 
 trait RoundsDecimals
 {
-    public $rounds = [];
-
     public function setAttribute($key, $value)
     {
-        if (!isset($this->rounds) || !is_array($this->rounds) || !isset($this->rounds[$key])) {
+        if (!property_exists($this, 'rounds') || !is_array($this->rounds) || !isset($this->rounds[$key])) {
             return parent::setAttribute($key, $value);
         }
 
