@@ -5,7 +5,7 @@ filter:
         - tests/*
         - examples/*
 build:
-   nodes:
+    nodes:
         analysis:
             project_setup:
                 override: true
