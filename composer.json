@@ -15,10 +15,11 @@
         }
     ],
     "require-dev": {
+        "php-xdebug": "*",
         "phpunit/phpunit": "*"
     },
     "scripts": {
-        "test": "phpunit ./tests"
+        "test": "./vendor/phpunit/phpunit/phpunit ./tests"
     },
     "autoload":{
         "psr-4":{
