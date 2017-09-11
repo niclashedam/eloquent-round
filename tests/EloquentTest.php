@@ -41,12 +41,44 @@ class EloquentTest extends TestCase
 
         $this->assertEquals(17.26, $model->decimal);
     }
+
+    public function testBrokenRoundsAttribute2()
+    {
+        $this->expectException(\Exception::class);
+
+        $model = new Model();
+        $model->rounds = 42;
+
+        $model->decimal = 17.261772;
+
+        $this->assertEquals(17.261772, $model->decimal);
+    }
+
+    public function testNoRoundsAttribute()
+    {
+        $model = new ModelNotRounding();
+
+        $model->decimal = 17.261772;
+
+        $this->assertEquals(17.261772, $model->decimal);
+    }
 }
 
 class Model extends \Illuminate\Database\Eloquent\Model
 {
     use RoundsDecimals;
-    public $rounds;
+    public $rounds = [];
+    protected $attributes = [
+        'decimal', 'preciseDecimal'
+    ];
+    protected $fillable = [
+        'decimal', 'preciseDecimal'
+    ];
+}
+
+class ModelNotRounding extends \Illuminate\Database\Eloquent\Model
+{
+    use RoundsDecimals;
     protected $attributes = [
         'decimal', 'preciseDecimal'
     ];
