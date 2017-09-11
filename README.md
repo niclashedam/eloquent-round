@@ -22,7 +22,17 @@ use NiclasHedam\EloquentRound\RoundsDecimals;
 class Model extends \Illuminate\Database\Eloquent\Model
 {
     use RoundsDecimals;
+
+    public $rounds = [
+        'decimal' => 2,
+        'preciseDecimal' => 4,
+    ];
 }
+```
+
+```
+$model->decimal = 1.675;
+echo $model->decimal; //1.68
 ```
 
 ## Contributing
