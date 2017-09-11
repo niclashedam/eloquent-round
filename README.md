@@ -1,4 +1,4 @@
-# CPR
+# EloquentRound
 [![Build Status](https://scrutinizer-ci.com/g/NiclasHedam/EloquentRound/badges/build.png?b=master)](https://scrutinizer-ci.com/g/NiclasHedam/EloquentRound/build-status/master)
 [![Code Coverage](https://scrutinizer-ci.com/g/NiclasHedam/EloquentRound/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/NiclasHedam/EloquentRound/?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/NiclasHedam/EloquentRound/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/NiclasHedam/EloquentRound/?branch=master)
