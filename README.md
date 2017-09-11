@@ -17,7 +17,7 @@ Use the RoundsDecimals trait.
 
 
 ```
-use NiclasHedam/EloquentRounding/RoundsDecimals;
+use NiclasHedam/EloquentRound/RoundsDecimals;
 
 class Model extends \Illuminate\Database\Eloquent\Model
 {
