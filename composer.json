@@ -1,0 +1,28 @@
+{
+    "name": "niclashedam/eloquent-round",
+    "description": "Automatic rounding of decimals/floats/doubles in Laravel Eloquent",
+    "type": "library",
+    "require": {
+        "php": ">=7.0.0",
+        "illuminate/database": "^5.0.0"
+    },
+    "minimum-stability": "stable",
+    "license": "Apache 2.0",
+    "authors": [
+        {
+            "name": "Niclas Hedam",
+            "email": "niclas@frax.dk"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "5.4.*"
+    },
+    "scripts": {
+        "test": "phpunit ./tests"
+    },
+    "autoload":{
+        "psr-4":{
+            "NiclasHedam\\EloquentRound\\" : "src/NiclasHedam/EloquentRound/"
+        }
+    }
+}
