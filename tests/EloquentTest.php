@@ -30,8 +30,6 @@ class EloquentTest extends TestCase
 
     public function testBrokenRoundsAttribute()
     {
-        $this->expectException(\Exception::class);
-
         $model = new Model();
         $model->rounds = [
             'decimal' => 'hello world',
@@ -39,13 +37,11 @@ class EloquentTest extends TestCase
 
         $model->decimal = 17.261772;
 
-        $this->assertEquals(17.26, $model->decimal);
+        $this->assertEquals(17.261772, $model->decimal);
     }
 
     public function testBrokenRoundsAttribute2()
     {
-        $this->expectException(\Exception::class);
-
         $model = new Model();
         $model->rounds = 42;
 
