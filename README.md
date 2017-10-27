@@ -44,7 +44,7 @@ echo $model->decimal; //1.68
 
 ## Credits
 
-This package is made possible with help from [Frax.dk Development](http://frax.dk) and [Hedam Technologies IvS](http://hedam.org).
+This package is made possible by [Pairy ApS](http://pairy.dk) and [Pandi Web ApS](http://pandiweb.dk).
 
 ## License
 
