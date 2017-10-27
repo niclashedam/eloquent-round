@@ -1,0 +1,14 @@
+language: php
+php:
+  - '7.1'
+before_script:
+  - composer install --dev --no-interaction
+script:
+  - mkdir -p build/logs
+  - phpunit --coverage-clover build/logs/clover.xml
+notifications:
+  email:
+    on_success: change # default: change
+    on_failure: always # default: always
+after_success:
+  - travis_retry php vendor/bin/coveralls
