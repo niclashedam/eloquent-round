@@ -1,7 +1,6 @@
 # EloquentRound
-[![Build Status](https://scrutinizer-ci.com/g/NiclasHedam/eloquent-round/badges/build.png?b=master)](https://scrutinizer-ci.com/g/NiclasHedam/eloquent-round/build-status/master)
-[![Code Coverage](https://scrutinizer-ci.com/g/NiclasHedam/eloquent-round/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/NiclasHedam/eloquent-round/?branch=master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/NiclasHedam/eloquent-round/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/NiclasHedam/eloquent-round/?branch=master)
+[![Build Status](https://travis-ci.org/NiclasHedam/eloquent-round.svg?branch=master)](https://travis-ci.org/NiclasHedam/eloquent-round)
+[![Coverage Status](https://coveralls.io/repos/github/NiclasHedam/eloquent-round/badge.svg?branch=master)](https://coveralls.io/github/NiclasHedam/eloquent-round?branch=master)
 
 This package automatically rounds all given decimal values when setting the attribute in a eloquent model. This is especially great, when you use a MySQL database, so that you know the right value is written to the database.
 
