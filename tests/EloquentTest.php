@@ -1,6 +1,7 @@
 <?php
-use PHPUnit\Framework\TestCase;
+
 use NiclasHedam\EloquentRound\RoundsDecimals;
+use PHPUnit\Framework\TestCase;
 
 class EloquentTest extends TestCase
 {
@@ -8,7 +9,7 @@ class EloquentTest extends TestCase
     {
         $model = new Model();
         $model->rounds = [
-            'decimal' => 2,
+            'decimal'        => 2,
             'preciseDecimal' => 4,
         ];
 
@@ -65,10 +66,10 @@ class Model extends \Illuminate\Database\Eloquent\Model
     use RoundsDecimals;
     public $rounds = [];
     protected $attributes = [
-        'decimal', 'preciseDecimal'
+        'decimal', 'preciseDecimal',
     ];
     protected $fillable = [
-        'decimal', 'preciseDecimal'
+        'decimal', 'preciseDecimal',
     ];
 }
 
@@ -76,9 +77,9 @@ class ModelNotRounding extends \Illuminate\Database\Eloquent\Model
 {
     use RoundsDecimals;
     protected $attributes = [
-        'decimal', 'preciseDecimal'
+        'decimal', 'preciseDecimal',
     ];
     protected $fillable = [
-        'decimal', 'preciseDecimal'
+        'decimal', 'preciseDecimal',
     ];
 }

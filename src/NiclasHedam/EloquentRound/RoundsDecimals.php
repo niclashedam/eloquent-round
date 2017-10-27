@@ -1,4 +1,5 @@
 <?php
+
 namespace NiclasHedam\EloquentRound;
 
 trait RoundsDecimals
