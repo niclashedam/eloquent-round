@@ -20,6 +20,51 @@ class EloquentTest extends TestCase
         $this->assertEquals(17.2617, $model->preciseDecimal);
     }
 
+    public function testNullRounding()
+    {
+        $model = new Model();
+        $model->rounds = [
+            'decimal'        => 2,
+            'preciseDecimal' => 4,
+        ];
+
+        $model->decimal = null;
+        $model->preciseDecimal = 17.261722;
+
+        $this->assertEquals(null, $model->decimal);
+        $this->assertEquals(17.2617, $model->preciseDecimal);
+    }
+
+    public function testStringRounding()
+    {
+        $model = new Model();
+        $model->rounds = [
+            'decimal'        => 2,
+            'preciseDecimal' => 4,
+        ];
+
+        $model->decimal = "6.12662";
+        $model->preciseDecimal = 17.261722;
+
+        $this->assertEquals(6.13, $model->decimal);
+        $this->assertEquals(17.2617, $model->preciseDecimal);
+    }
+
+    public function testRemovesInsignificantZeros()
+    {
+        $model = new Model();
+        $model->rounds = [
+            'decimal'        => 2,
+            'preciseDecimal' => 4,
+        ];
+
+        $model->decimal = 6.1;
+        $model->preciseDecimal = 17.261722;
+
+        $this->assertEquals(6.1, $model->decimal);
+        $this->assertEquals(17.2617, $model->preciseDecimal);
+    }
+
     public function testNotRounding()
     {
         $model = new Model();
