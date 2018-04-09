@@ -20,6 +20,21 @@ class EloquentTest extends TestCase
         $this->assertEquals(17.2617, $model->preciseDecimal);
     }
 
+    public function testSimpleRoundingWithCasting()
+    {
+        $model = new ModelWithCasting();
+        $model->rounds = [
+            'decimal'        => 2,
+            'preciseDecimal' => 4,
+        ];
+
+        $model->decimal = 17.261772;
+        $model->preciseDecimal = 17.261722;
+
+        $this->assertEquals(17.26, $model->decimal);
+        $this->assertEquals(17.2617, $model->preciseDecimal);
+    }
+
     public function testNullRounding()
     {
         $model = new Model();
@@ -35,9 +50,39 @@ class EloquentTest extends TestCase
         $this->assertEquals(17.2617, $model->preciseDecimal);
     }
 
+    public function testNullRoundingWithCasting()
+    {
+        $model = new ModelWithCasting();
+        $model->rounds = [
+            'decimal'        => 2,
+            'preciseDecimal' => 4,
+        ];
+
+        $model->decimal = null;
+        $model->preciseDecimal = 17.261722;
+
+        $this->assertEquals(null, $model->decimal);
+        $this->assertEquals(17.2617, $model->preciseDecimal);
+    }
+
     public function testStringRounding()
     {
         $model = new Model();
+        $model->rounds = [
+            'decimal'        => 2,
+            'preciseDecimal' => 4,
+        ];
+
+        $model->decimal = '6.12662';
+        $model->preciseDecimal = 17.261722;
+
+        $this->assertEquals(6.13, $model->decimal);
+        $this->assertEquals(17.2617, $model->preciseDecimal);
+    }
+
+    public function testStringRoundingWithCasting()
+    {
+        $model = new ModelWithCasting();
         $model->rounds = [
             'decimal'        => 2,
             'preciseDecimal' => 4,
@@ -118,13 +163,33 @@ class Model extends \Illuminate\Database\Eloquent\Model
     ];
 }
 
+class ModelWithCasting extends \Illuminate\Database\Eloquent\Model
+{
+    use RoundsDecimals;
+    public $rounds = [];
+    protected $attributes = [
+        'decimal',
+        'preciseDecimal',
+    ];
+    protected $fillable = [
+        'decimal',
+        'preciseDecimal',
+    ];
+    protected $casts = [
+        'decimal' => 'float',
+        'preciseDecimal' => 'float',
+    ];
+}
+
 class ModelNotRounding extends \Illuminate\Database\Eloquent\Model
 {
     use RoundsDecimals;
     protected $attributes = [
-        'decimal', 'preciseDecimal',
+        'decimal',
+        'preciseDecimal',
     ];
     protected $fillable = [
-        'decimal', 'preciseDecimal',
+        'decimal',
+        'preciseDecimal',
     ];
 }
