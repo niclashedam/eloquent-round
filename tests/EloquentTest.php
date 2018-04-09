@@ -176,7 +176,7 @@ class ModelWithCasting extends \Illuminate\Database\Eloquent\Model
         'preciseDecimal',
     ];
     protected $casts = [
-        'decimal' => 'float',
+        'decimal'        => 'float',
         'preciseDecimal' => 'float',
     ];
 }
