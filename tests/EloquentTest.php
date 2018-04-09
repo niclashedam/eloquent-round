@@ -19,7 +19,7 @@ class EloquentTest extends TestCase
         $this->assertEquals(17.26, $model->decimal);
         $this->assertEquals(17.2617, $model->preciseDecimal);
     }
-    
+
     public function testNullRounding()
     {
         $model = new Model();
