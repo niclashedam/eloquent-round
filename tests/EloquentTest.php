@@ -43,7 +43,7 @@ class EloquentTest extends TestCase
             'preciseDecimal' => 4,
         ];
 
-        $model->decimal = "6.12662";
+        $model->decimal = '6.12662';
         $model->preciseDecimal = 17.261722;
 
         $this->assertEquals(6.13, $model->decimal);
