@@ -42,10 +42,6 @@ echo $model->decimal; //1.68
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 
-## Credits
-
-This package is made possible by [Pairy ApS](http://pairy.dk) and [Pandi Web ApS](http://pandiweb.dk).
-
 ## License
 
-Released under the Apache License 2.0
+Released under the MIT license
