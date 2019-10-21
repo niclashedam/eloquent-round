@@ -3,8 +3,8 @@
     "description": "Automatic rounding of decimals/floats/doubles in Laravel Eloquent",
     "type": "library",
     "require": {
-        "php": ">=7.0.0",
-        "illuminate/database": "^5.0.0"
+        "php": ">=7.2",
+        "illuminate/database": "^5|^6"
     },
     "minimum-stability": "stable",
     "license": "MIT",
@@ -16,7 +16,7 @@
     ],
     "require-dev": {
         "phpunit/phpunit": "*",
-        "php-coveralls/php-coveralls": "^1.0"
+        "php-coveralls/php-coveralls": "*"
     },
     "scripts": {
         "test": "./vendor/phpunit/phpunit/phpunit ./tests"
