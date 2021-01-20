@@ -3,7 +3,7 @@
     "description": "Automatic rounding of decimals/floats/doubles in Laravel Eloquent",
     "type": "library",
     "require": {
-        "php": ">=7.2",
+        "php": ">=7.3",
         "illuminate/database": "^5|^6|^7|^8"
     },
     "minimum-stability": "stable",
